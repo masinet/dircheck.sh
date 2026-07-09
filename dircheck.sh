@@ -15,7 +15,7 @@
 # along with this program. If not, see <https://gnu.org>.
 #
 #
-# dircheck.sh
+# dircheck.sh v8
 #
 # Description:
 #   A high-performance file integrity tool for large datasets (millions of files, up to 8TB),
