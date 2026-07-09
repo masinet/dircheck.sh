@@ -15,7 +15,7 @@
 # along with this program. If not, see <https://gnu.org>.
 #
 #
-# dircheck.sh v8
+# dircheck.sh v9
 #
 # Description:
 #   A high-performance file integrity tool for large datasets (millions of files, up to 8TB),
@@ -184,8 +184,8 @@ echo "--------------------"
 
     echo "=== Files changed ==="
 join -t $'\t' -j 2 \
-    <(awk -v RS='\0\n' -v ORS='\0' '1' < "$TMP_CURRENT" | tr '\0' '\n' | paste - - | sort -k2,2) \
-    <(awk -v RS='\0\n' -v ORS='\0' '1' < "$TMP_SAVED" | tr '\0' '\n' | paste - - | sort -k2,2) |
+    <(awk -v RS='\0\n' -v ORS='\0' '1' < "$TMP_CURRENT" | tr '\0' '\n' | paste - - | sort -k2) \
+    <(awk -v RS='\0\n' -v ORS='\0' '1' < "$TMP_SAVED" | tr '\0' '\n' | paste - - | sort -k2) |
 awk -F $'\t' '$2 != $3 { print $1 "\t" $2 "\t" $3 }'
 
 
